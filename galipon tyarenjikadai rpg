@@ -1,0 +1,37 @@
+#include<time.h>
+#include<stdlib.h>
+#include<stdio.h>
+
+int main()
+{
+	srand(time(0));
+	int I = (rand() % 20) + 1;
+	int S = (rand()%(20 - I)) + 1;
+	int C = (20 - I - S);
+	if (I > S && I > C)
+	{
+		printf("あなたは魔法使い系のmageです");
+	}
+	if (S > I && S > C)
+	{
+		printf("あなたはファイター系のknightです");
+	}
+	if (C >  I && C >  S)
+	{
+		printf("あなたは盗人系のthiefです");
+	}
+	if (I == S && I> C)
+	{
+		printf("あなたは魔法使い系とファイター系のmage&kniteです");
+	}
+	if (I == C && I > S)
+	{
+		printf("あなたは魔法使い系と盗人系のmage&thiefです");
+	}
+	if (C==S  && C > I)
+	{
+		printf("あなたはファイター系と盗人系のknight&thiefです");
+	}
+	printf("inteligence=%d,stamina=%d,charisma=%d", I, S, C);
+	return 0;
+}
